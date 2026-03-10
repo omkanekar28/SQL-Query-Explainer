@@ -1,1 +1,2 @@
 Dataset:- https://www.kaggle.com/datasets/thedevastator/dataset-for-developing-natural-language-interfac
+Training Notebook Reference (Thinking):- https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Qwen3_(14B)-Reasoning-Conversational.ipynb#scrollTo=8a250abf756e
