@@ -9,3 +9,6 @@ from src.common.settings import (
     LlamaCppDatasetPreparationModelSettings, LlamaCppDatasetPreparationInferenceSettings, 
     LlamaCppTrainedInferenceSettings, LlamaCppTrainedModelSettings
 )
+from src.common.utils import (
+    separate_thinking_and_response
+)

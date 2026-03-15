@@ -15,6 +15,7 @@ class LlamaCppDatasetPreparationModelSettings:
     N_THREADS: int = 8
     N_THREADS_BATCH: int = 8
     VERBOSE: bool = True
+    FLAST_ATTN: bool = True
 
 
 class LlamaCppDatasetPreparationInferenceSettings:
@@ -36,6 +37,7 @@ class LlamaCppTrainedModelSettings:
     N_THREADS: int = 8
     N_THREADS_BATCH: int = 8
     VERBOSE: bool = True
+    FLAST_ATTN: bool = False    # MOSTLY RUNNING ON CPU
 
 
 class LlamaCppTrainedInferenceSettings:
