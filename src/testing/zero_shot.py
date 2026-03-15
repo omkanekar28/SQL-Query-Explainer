@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 from llama_cpp import Llama
-from src.common import LlamaCppModelSettings, LlamaCppInferenceSettings
+from src.common import LlamaCppDatasetPreparationModelSettings, LlamaCppDatasetPreparationInferenceSettings
 from src.common import PromptManager, SQL_EXPLAINER_SYSTEM_PROMPT_DS_PREP
 
 TEST_FILEPATH = "data/splits/test.csv"
@@ -15,12 +15,12 @@ model_loading_start_time = time.time()
 print(f"Loading model '{GGUF_MODEL_FILEPATH}' ...")
 model = Llama(
     model_path=GGUF_MODEL_FILEPATH,
-    n_ctx=LlamaCppModelSettings.N_CTX,
-    n_gpu_layers=LlamaCppModelSettings.N_GPU_LAYERS,
-    n_batch=LlamaCppModelSettings.N_BATCH,
-    n_threads=LlamaCppModelSettings.N_THREADS,
-    n_threads_batch=LlamaCppModelSettings.N_THREADS_BATCH,
-    verbose=LlamaCppModelSettings.VERBOSE
+    n_ctx=LlamaCppDatasetPreparationModelSettings.N_CTX,
+    n_gpu_layers=LlamaCppDatasetPreparationModelSettings.N_GPU_LAYERS,
+    n_batch=LlamaCppDatasetPreparationModelSettings.N_BATCH,
+    n_threads=LlamaCppDatasetPreparationModelSettings.N_THREADS,
+    n_threads_batch=LlamaCppDatasetPreparationModelSettings.N_THREADS_BATCH,
+    verbose=LlamaCppDatasetPreparationModelSettings.VERBOSE
 )
 print(f"Model '{GGUF_MODEL_FILEPATH}' loaded successfully in {time.time() - model_loading_start_time:.2f} seconds")
 
@@ -41,12 +41,12 @@ for row_idx, row_query in enumerate(test_column):
     print(f"QUERY:- {row_query}")
     response = model.create_chat_completion(
         messages=messages,
-        max_tokens=LlamaCppInferenceSettings.MAX_TOKENS,
-        temperature=LlamaCppInferenceSettings.TEMPERATURE,
-        presence_penalty=LlamaCppInferenceSettings.PRESENCE_PENALTY,
-        repeat_penalty=LlamaCppInferenceSettings.REPEAT_PENALTY,
-        top_k=LlamaCppInferenceSettings.TOP_K,
-        top_p=LlamaCppInferenceSettings.TOP_P,
+        max_tokens=LlamaCppDatasetPreparationInferenceSettings.MAX_TOKENS,
+        temperature=LlamaCppDatasetPreparationInferenceSettings.TEMPERATURE,
+        presence_penalty=LlamaCppDatasetPreparationInferenceSettings.PRESENCE_PENALTY,
+        repeat_penalty=LlamaCppDatasetPreparationInferenceSettings.REPEAT_PENALTY,
+        top_k=LlamaCppDatasetPreparationInferenceSettings.TOP_K,
+        top_p=LlamaCppDatasetPreparationInferenceSettings.TOP_P,
     )
     explanation = response["choices"][0]["message"]["content"]
     usage = response["usage"]

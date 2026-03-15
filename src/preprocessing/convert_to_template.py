@@ -43,7 +43,7 @@ for file_idx, filename in enumerate(files):
                 OUTPUT_DF_DICT["system"].append(prompt_manager.SYSTEM_PROMPT)
                 OUTPUT_DF_DICT["query"].append(query)
                 OUTPUT_DF_DICT["explanation"].append("")
-                OUTPUT_DF_DICT["conversations"].append("")
+                OUTPUT_DF_DICT["reasoning"].append("")
             
             except Exception as e:
                 print(
