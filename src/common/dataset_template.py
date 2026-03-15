@@ -1,4 +1,4 @@
-OUTPUT_DF_DICT__TEMPLATE = {
+OUTPUT_DF_DICT_TEMPLATE = {
     "system": [],
     "query": [], 
     "explanation": [], 

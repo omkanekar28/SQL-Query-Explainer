@@ -1,16 +1,16 @@
 import os
 import re
 import pandas as pd
-from common import OUTPUT_DF_DICT__TEMPLATE
-from common import PromptManager, SQL_EXPLAINER_SYSTEM_PROMPT
+from src.common import OUTPUT_DF_DICT_TEMPLATE
+from src.common import PromptManager, SQL_EXPLAINER_SYSTEM_PROMPT_DS_PREP
 
-INPUT_DATASET_PATH = "/path/to/SQL-Query-Explainer/data/dataset-for-developing-natural-language-interfac"
+INPUT_DATASET_PATH = "data/dataset-for-developing-natural-language-interface"
 COLUMN_NAME = "sql"
 INNER_DICT_COLUMN_NAME = "human_readable"
-OUTPUT_DF_DICT = OUTPUT_DF_DICT__TEMPLATE.copy()
-OUTPUT_CSV_SAVE_PATH = "/path/to/SQL-Query-Explainer/data/dataset_incomplete.csv"
+OUTPUT_DF_DICT = OUTPUT_DF_DICT_TEMPLATE.copy()
+OUTPUT_CSV_SAVE_PATH = "data/dataset_incomplete.csv"
 
-prompt_manager = PromptManager(system=SQL_EXPLAINER_SYSTEM_PROMPT)
+prompt_manager = PromptManager(system=SQL_EXPLAINER_SYSTEM_PROMPT_DS_PREP)
 
 files = os.listdir(INPUT_DATASET_PATH)
 no_of_files = len(files)
