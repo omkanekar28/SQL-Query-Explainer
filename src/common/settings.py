@@ -18,7 +18,7 @@ class LlamaCppDatasetPreparationModelSettings:
 
 
 class LlamaCppDatasetPreparationInferenceSettings:
-    MAX_TOKENS: int = 2048    # ACCOUNT FOR REASONING
+    MAX_TOKENS: int = 4096    # ACCOUNT FOR REASONING
     TEMPERATURE: float = 0.7
     PRESENCE_PENALTY: float = 0.0
     REPEAT_PENALTY: float = 1.1

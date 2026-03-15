@@ -2,7 +2,7 @@ import time
 import pandas as pd
 from llama_cpp import Llama
 from src.common import LlamaCppDatasetPreparationModelSettings, LlamaCppDatasetPreparationInferenceSettings
-from src.common import PromptManager, SQL_EXPLAINER_SYSTEM_PROMPT_DS_PREP
+from src.common import PromptManager, SQL_EXPLAINER_SYSTEM_PROMPT_DS_PREP, SQL_EXPLAINER_SYSTEM_PROMPT_FINAL
 
 TEST_FILEPATH = "data/splits/test.csv"
 QUERY_COLUMN_NAME = "query"
